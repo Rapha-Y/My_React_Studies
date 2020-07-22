@@ -1,14 +1,28 @@
 import React from 'react'
 
 function App() {
-    const abc = "a b c"
-    const def = "d e f"
     const date = new Date()
+    const hours = date.getHours()
+    let timeOfDay
+
+    const styles = {
+        fontSize: 30
+    }
+
+    if (hours < 12) {
+        timeOfDay = "morning"
+        styles.color = "pink"
+    } else if (hours < 17) {
+        timeOfDay = "afternoon"
+        styles.color = "red"
+    } else {
+        timeOfDay = "night"
+        styles.color = "black"
+    }
 
     return(
         <div>
-            {`${abc} ${def}`}<br />
-            {date.getHours()}<br />
+            <div style={styles}>Good {timeOfDay}</div><br />
             <br />
 
             <input type="checkbox"></input>
