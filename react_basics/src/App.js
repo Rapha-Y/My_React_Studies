@@ -1,15 +1,16 @@
 import React from 'react'
 
-import Navbar from './components/Navbar'
-import MainContent from './components/MainContent'
-import Footer from './components/Footer'
-
 function App() {
-    return (
+    return(
         <div>
-            <Navbar />
-            <MainContent />
-            <Footer />
+            <input type="checkbox"></input>
+            <span> Carrots</span><br />
+            <input type="checkbox"></input>
+            <span> Potatoes</span><br />
+            <input type="checkbox"></input>
+            <span> Asparaguses</span><br />
+            <input type="checkbox"></input>
+            <span> Onions</span><br />
         </div>
     )
 }
