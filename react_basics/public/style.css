@@ -1,3 +1,17 @@
-.green {
-    background-color: green;
+.todo-item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    background-color: white;
+    padding: 10px;
+}
+
+.todo-list {
+    margin: auto;
+    width: 30%;
+    background-color: lightpink;
+    /*border: 1px solid black;*/
+    padding: 10px;
 }
