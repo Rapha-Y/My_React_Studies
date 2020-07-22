@@ -8,7 +8,7 @@ function App() {
             <input type="checkbox"></input>
             <span> Potatoes</span><br />
             <input type="checkbox"></input>
-            <span> Asparaguses</span><br />
+            <span className="green"> Asparaguses</span><br />
             <input type="checkbox"></input>
             <span> Onions</span><br />
         </div>
