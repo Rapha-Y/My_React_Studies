@@ -4,14 +4,16 @@ class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            statement: "Ain't a real place."
+            name: "Jolyne Cujoh",
+            age: 17
         }
     }
-    
+
     render() {
         return (
             <div>
-                <h1>Split States of Europe. {this.state.statement}</h1>
+                <h1>{this.state.name}</h1>
+                <h1>{this.state.age} years old</h1>
             </div>
         )
     }
