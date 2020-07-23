@@ -1,39 +1,27 @@
 import React from 'react'
 
-import TodoItem from './components/TodoItem.js'
-import todoData from './data/todoData.js'
+import Conditional from './Conditional'
 
 class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            todos: todoData
+            isLoading: true
         }
-        this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange(id) {
-        this.setState((prevState) => {
-            const newTodos = prevState.todos.map((todo) => {
-                if(todo.id === id) {
-                    todo.completed = !todo.completed
-                }
-                return todo
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                isLoading: false
             })
-            return { 
-                todos: newTodos 
-            }
-        })
+        }, 1500)
     }
-    
+
     render() {
-        const todoItems = this.state.todos.map(item => 
-            <TodoItem key={item.id} item={item} handleChange={this.handleChange} />
-        )
-    
-        return(
-            <div className="todo-list">
-                {todoItems}  
+        return (
+            <div>
+                {this.state.isLoading ? <h1>Loading...</h1> : <Conditional />}
             </div>
         )
     }
