@@ -1,20 +1,26 @@
 import React from 'react'
 
+import TodoItem from './components/TodoItem.js'
+import todoData from './data/todoData.js'
+
 class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            isLoggedIn: true
+            tdData: todoData
         }
     }
-
+    
     render() {
-        let loggedState
-        this.state.isLoggedIn ? loggedState = "in" : loggedState = "out"
-
-        return (
-            <div>
-                <h1>You are currently logged {loggedState}</h1>
+        const todoList = this.state.tdData.map((item) => {
+            return (
+                <TodoItem key={item.id} data={item} />
+            )
+        })
+    
+        return(
+            <div className="todo-list">
+                {todoList}  
             </div>
         )
     }
