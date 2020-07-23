@@ -1,19 +1,24 @@
 import React from 'react'
 
 //import TodoItem from './components/TodoItem.js'
-import Joke from './components/Joke'
-import jokesData from './data/jokesData'
+import Champion from './components/Champion'
+import lorData from './data/lorData'
 
 function App() {
-    const jokeComponents = jokesData.map((joke) => {
+    const lorComponents = lorData.map((champion) => {
         return (
-            <Joke key={joke.id} question={joke.question} punchline={joke.punchline} />
+            <Champion 
+                key={champion.champion} 
+                champion={champion.champion} 
+                atk={champion.atk} 
+                def={champion.def}    
+            />
         )
     })
 
     return(
         <div>
-            {jokeComponents}
+            {lorComponents}
         </div>
         /*<div className="todo-list">
             <TodoItem />
