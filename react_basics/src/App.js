@@ -1,26 +1,29 @@
 import React from 'react'
 
-function handleClick() {
-    console.log("I was clicked")
-}
+import TodoItem from './components/TodoItem.js'
+import todoData from './data/todoData.js'
 
-function handleHover() {
-    console.log("Get off me!")
-}
-
-function App() {
-    return (
-        <div>
-            <img 
-                src="https://tinyurl.com/siteresources/images/tinyurl_logo.png" 
-                alt="tinyurl-logo" 
-                onMouseEnter={handleHover}    
-            />
-            <br />
-            <br />
-            <button onClick={handleClick}>Click me</button>
-        </div>
-    )
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            tdData: todoData
+        }
+    }
+    
+    render() {
+        const todoList = this.state.tdData.map((item) => {
+            return (
+                <TodoItem key={item.id} data={item} />
+            )
+        })
+    
+        return(
+            <div className="todo-list">
+                {todoList}  
+            </div>
+        )
+    }
 }
 
 export default App
