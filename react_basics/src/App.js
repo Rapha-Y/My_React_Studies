@@ -1,31 +1,19 @@
 import React from 'react'
 
-//import TodoItem from './components/TodoItem.js'
-import Champion from './components/Champion'
-import lorData from './data/lorData'
+import TodoItem from './components/TodoItem.js'
+import todoData from './data/todoData.js'
 
 function App() {
-    const lorComponents = lorData.map((champion) => {
+    const todoList = todoData.map((item) => {
         return (
-            <Champion 
-                key={champion.champion} 
-                champion={champion.champion} 
-                atk={champion.atk} 
-                def={champion.def}    
-            />
+            <TodoItem key={item.id} data={item} />
         )
     })
 
     return(
-        <div>
-            {lorComponents}
+        <div className="todo-list">
+            {todoList}  
         </div>
-        /*<div className="todo-list">
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
-            <TodoItem />
-        </div>*/
     )
 }
 
