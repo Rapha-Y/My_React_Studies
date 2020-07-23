@@ -4,16 +4,17 @@ class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            name: "Jolyne Cujoh",
-            age: 17
+            isLoggedIn: true
         }
     }
 
     render() {
+        let loggedState
+        this.state.isLoggedIn ? loggedState = "in" : loggedState = "out"
+
         return (
             <div>
-                <h1>{this.state.name}</h1>
-                <h1>{this.state.age} years old</h1>
+                <h1>You are currently logged {loggedState}</h1>
             </div>
         )
     }
