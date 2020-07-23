@@ -2,7 +2,7 @@ import React from 'react'
 
 function TodoItem(props) {
     return (
-        <div className="todo-item">
+        <div className="todo-item" style={props.item.completed ? {textDecoration: "line-through"} : null}>
             <input 
                 type="checkbox" 
                 checked={props.item.completed}
