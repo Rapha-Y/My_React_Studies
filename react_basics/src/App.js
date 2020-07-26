@@ -1,15 +1,33 @@
 import React from 'react'
 
-import Header from './components/Header'
-import MemeGenerator from './components/MemeGenerator'
+class App extends React.Component {
+    state = {
+        firstName: ""
+    }
 
-function App() {
-    return (
-        <div>
-            <Header />
-            <MemeGenerator />
-        </div>
-    )
+    handleChange = (event) => {
+        const {name, value} = event.target
+        this.setState({
+            [name]: value
+        })
+    }
+
+    render() {
+        return (
+            <main>
+                <form>
+                    <input
+                        type="text"
+                        name="firstName"
+                        value={this.state.firstName}
+                        onChange={this.handleChange}
+                        placeholder="First name"
+                    />
+                </form>
+                <h1>{this.state.firstName}</h1>
+            </main>
+        )
+    }
 }
 
 export default App
