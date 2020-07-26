@@ -9,6 +9,7 @@ class MemeGenerator extends React.Component {
             randomImage: "https://i.kym-cdn.com/entries/icons/medium/000/026/489/crying.jpg",
             allMemeImgs: []
         }
+        this.handleChange = this.handleChange.bind(this)
     }
 
     componentDidMount() {
@@ -20,10 +21,35 @@ class MemeGenerator extends React.Component {
                 })
             })
     }
+
+    handleChange(event) {
+        const {name, value} = event.target
+        this.setState({
+            [name]: value
+        })
+    }
     
     render() {
         return (
-            <h1>MemeGenerator</h1>
+            <div>
+                <form className="meme-form">
+                    <input 
+                        type="text" 
+                        value={this.state.topText} 
+                        name="topText" 
+                        placeholder="Top Text"
+                        onChange={this.handleChange} 
+                    />
+                    <input 
+                        type="text" 
+                        value={this.state.bottomText} 
+                        name="bottomText" 
+                        placeholder="Bottom Text"
+                        onChange={this.handleChange} 
+                    />
+                    <button>Gen</button>
+                </form>
+            </div>
         )
     }
 }
