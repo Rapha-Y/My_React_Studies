@@ -1,10 +1,8 @@
 import React from 'react'
 
-import FormContainer from './FormContainer'
-
 function App() {
     return (
-        <FormContainer />
+        <h1>Hello World</h1>
     )
 }
 
